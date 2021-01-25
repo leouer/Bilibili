@@ -22,13 +22,8 @@ jobs:
       - uses: actions/checkout@v2
         env : 
           cookie:  ${{secrets.BILIBILICOOKIE01}}
-
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo "$env:cookie"
-
         
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: ./Bilibili.ps1 -Cookietxt "$env:cookie"
+        run: ./Bilibili.ps1 -Cookietxt $env:cookie
         shell: powershell
