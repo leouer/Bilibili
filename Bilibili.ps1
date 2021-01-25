@@ -3,6 +3,8 @@ Param(
     [string]$Cookietxt
 )
 
+$Cookietxt
+
 $session = New-Object Microsoft.PowerShell.Commands.WebRequestSession
 $cookies = $Cookietxt.Split(';')
 $cookies[0]
