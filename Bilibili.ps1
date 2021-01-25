@@ -1,13 +1,13 @@
-[CmdletBinding()]
-Param(
-    [string]$Cookietxt
-)
+#[CmdletBinding()]
+#Param(
+#    [string]$Cookietxt
+#)
 
-$Cookietxt
+$Cookietxt = $env.cookie
 
 $session = New-Object Microsoft.PowerShell.Commands.WebRequestSession
 $cookies = $Cookietxt.Split(';')
-$cookies[0]
+
 foreach($c in $cookies)
 {
     $cc = $c.Split('=')
@@ -23,7 +23,5 @@ foreach($c in $cookies)
     $session.Cookies.Add($cookie)
 }
 
-$session
 
 $res = Invoke-WebRequest -Uri 'https://api.bilibili.com/x/web-interface/nav' -WebSession $session -UseBasicParsing   -Method 'GET'
-$res
