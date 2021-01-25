@@ -25,8 +25,8 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: "$env:cookie"
-        shell: powershell
+        run: echo "$env:cookie"
+
         
       # Runs a single command using the runners shell
       - name: Run a one-line script
